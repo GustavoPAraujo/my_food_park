@@ -4,47 +4,52 @@ import React from "react";
 import { View, ImageBackground, Image, Text } from "react-native"
 
 import { icons } from "@/constants/icons"
+import { images } from "@/constants/images";
 
 const TabIcon = ({ focused, icon, title }: any) => {
+
+  if (focused) {
+    return (
+      <ImageBackground
+        source={images.highlight}
+        className="flex flex-row w-full flex-1 min-w-[112px] min-h-20 mt-4 justify-center items-center rounded-full overflow-hidden"
+      >
+        <Image source={icon} tintColor="#f00" className='size-5' />
+        <Text className="text-base font-semibold ml-2">{title}</Text>
+
+      </ImageBackground>
+    )
+  }
+
   return (
-    <View style={{ alignItems: "center", justifyContent: "center" }}>
-      <Image 
-        source={icon} 
-        style={{ width: 24, height: 24, tintColor: focused ? "#000" : "#aaa" }} 
-      />
-      {focused && (
-        <Text style={{ color: "white", fontSize: 16, fontWeight: "600", marginTop: 4 }}>
-          {title}
-        </Text>
-      )}
+    <View className='size-full justify-center items-center mt-4 rounded-full'>
+      <Image source={icon} tintColor="#a9a9a9" className='size-5' />
     </View>
-  );
-};
+  )
+}
 
 const _Layout = () => {
 
   return (
     <Tabs
-      screenOptions={{
-        tabBarShowLabel: false,
-        tabBarItemStyle: {
-          width: '100%',
-          height: '100%',
-          justifyContent: 'center',
-          alignItems: 'center'
-        },
-        tabBarStyle: {
-          backgroundColor: '#',
-          borderRadius: 50,
-          marginHorizontal: 20,
-          marginBottom: 20,
-          height: 56,
-          position: 'absolute',
-          overflow: 'hidden',
-          borderWidth: 1,
-          borderColor: '#0F0D23'
-        }
-      }}
+    screenOptions={{
+      tabBarShowLabel: false,
+      tabBarItemStyle: {
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      tabBarStyle: {
+        backgroundColor: '#fff',
+        borderRadius: 50,
+        marginHorizontal: 10,
+        marginBottom: 32,
+        height: 56,
+        position: 'absolute',
+        overflow: 'hidden',
+      }
+    }}
     >
       <Tabs.Screen
         name="index"
@@ -52,13 +57,12 @@ const _Layout = () => {
           title: 'Home',
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon  
-              focused={focused} 
+            <TabIcon
+              focused={focused}
               icon={icons.home}
-            title=""  
+              title="Home"
             />
           )
-
         }}
       />
       <Tabs.Screen
@@ -66,6 +70,13 @@ const _Layout = () => {
         options={{
           title: 'Stores',
           headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              icon={icons.search}
+              title="Stores"
+            />
+          )
         }}
       />
       <Tabs.Screen
@@ -73,6 +84,13 @@ const _Layout = () => {
         options={{
           title: 'Events',
           headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              icon={icons.music}
+              title="Events"
+            />
+          )
         }}
       />
       <Tabs.Screen
@@ -80,6 +98,13 @@ const _Layout = () => {
         options={{
           title: 'Cart',
           headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              icon={icons.shoppingCart}
+              title="Cart"
+            />
+          )
         }}
       />
 

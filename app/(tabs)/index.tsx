@@ -4,7 +4,7 @@ import React from 'react'
 export default function Index() {
   return (
     <View>
-      <Text>Main info:</Text>
+      <Text className='text-blue-400'>Main info:</Text>
       <Text>adress</Text>
       <Text>fone</Text>
       <Text>Socials</Text>
