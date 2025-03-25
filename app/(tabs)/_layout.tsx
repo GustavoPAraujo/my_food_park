@@ -54,13 +54,13 @@ const _Layout = () => {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'inicio',
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon
               focused={focused}
               icon={icons.home}
-              title="Home"
+              title="Início"
             />
           )
         }}
@@ -74,7 +74,7 @@ const _Layout = () => {
             <TabIcon
               focused={focused}
               icon={icons.search}
-              title="Stores"
+              title="Lojas"
             />
           )
         }}
@@ -88,7 +88,7 @@ const _Layout = () => {
             <TabIcon
               focused={focused}
               icon={icons.music}
-              title="Events"
+              title="Eventos"
             />
           )
         }}
@@ -102,7 +102,7 @@ const _Layout = () => {
             <TabIcon
               focused={focused}
               icon={icons.shoppingCart}
-              title="Cart"
+              title="Carrinho"
             />
           )
         }}
