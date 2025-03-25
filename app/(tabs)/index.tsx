@@ -2,7 +2,7 @@ import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { images } from '@/constants/images'
 import SocialIcon from '@/components/socialIcon'
-
+import Map from "@/components/Map";
 
 
 export default function Index() {
@@ -52,6 +52,8 @@ export default function Index() {
         </View>
 
         <View className='mt-10 px-6 mb-28'>
+
+
           <Text className='text-lg font-bold'>Endereço</Text>
           <Text className='text-sm text-gray-600 mt-2'>
             R. Delfino Conti - Bairro Trindade, Florainópolis
@@ -59,6 +61,10 @@ export default function Index() {
           <Text className='text-sm text-gray-600 mt-2'>
             Contato: (11) 1234-5678 | enbarcafood@gmail.com
           </Text>
+        </View>
+
+        <View className="mt-4">
+          <Map />
         </View>
 
       </ScrollView>

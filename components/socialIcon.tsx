@@ -8,7 +8,7 @@ const SocialIcon = ({ name }: SocialIconProps) => {
   return (
     <TouchableOpacity
       onPress={() => alert(`Abrindo ${name}...`)}
-      className='bg-red-600 px-4 py-2 rounded-full'
+      className='bg-red-600 px-6 py-4 rounded-full'
     >
       <Text className='text-white'>{name}</Text>
     </TouchableOpacity>
