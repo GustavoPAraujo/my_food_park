@@ -2,14 +2,15 @@ import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { images } from '@/constants/images'
 import SocialIcon from '@/components/socialIcon'
-import Map from "@/components/Map";
+import Map from "@/components/Map"
+
 
 
 export default function Index() {
   return (
     <View className='flex-1 items-center'>
 
-      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingVertical: 20 }}>
+      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 180 }}>
         <Image source={images.logoSemFundo} className='h-60 w-60' />
 
 
@@ -28,7 +29,7 @@ export default function Index() {
             <Text className="text-white text-2xl font-semibold text-center mb-2">
               Sabores para todos os gostos
             </Text>
-            <Text className="text-white text-base text-center mb-4 ">
+            <Text className="text-white text-base text-center ">
               Com uma ampla variedade de lojas de alimentação e bebidas, o Embarca Food traz desde opções clássicas até pratos contemporâneos,
               garantindo que cada cliente encontre algo especial para saborear. Além disso, nosso espaço conta com um ambiente aconchegante e bem estruturado,
               perfeito para reunir amigos, família e colegas de trabalho.
@@ -44,15 +45,11 @@ export default function Index() {
           </Text>
         </View>
 
+        <View className='mt-10 '>
 
-        <View className='flex-1 flex-row gap-2 mt-10'>
-          <SocialIcon name="Instagram" />
-          <SocialIcon name="Twitter" />
-          <SocialIcon name="WhatsApp" />
-        </View>
-
-        <View className='mt-10 px-6 mb-28'>
-
+          <View>
+            <Map />
+          </View>
 
           <Text className='text-lg font-bold'>Endereço</Text>
           <Text className='text-sm text-gray-600 mt-2'>
@@ -62,9 +59,11 @@ export default function Index() {
             Contato: (11) 1234-5678 | enbarcafood@gmail.com
           </Text>
         </View>
-
-        <View className="mt-4">
-          <Map />
+        
+        <View className='flex-1 flex-row gap-2 mt-10'>
+          <SocialIcon name="Instagram" />
+          <SocialIcon name="Twitter" />
+          <SocialIcon name="WhatsApp" />
         </View>
 
       </ScrollView>
