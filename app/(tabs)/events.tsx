@@ -15,12 +15,11 @@ export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
-    // Para dados locais, basta setar o JSON importado.
-    // Caso queira buscar dados remotamente, utilize fetch().
+
     setEvents(eventsData);
   }, []);
 
-  // Mapeamento para ordenar os dias da semana
+
   const daysOrder: { [key: string]: number } = {
     'Segunda-feira': 1,
     'Terça-feira': 2,
