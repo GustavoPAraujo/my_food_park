@@ -35,42 +35,16 @@ const StoreCard: React.FC<StoreCardProps> = ({ store }) => {
   const imageSource = imageMap[store.banner] || { uri: store.banner };
 
   return (
-    <TouchableOpacity style={styles.card}>
-      <Image source={imageSource} style={styles.banner} resizeMode="cover" />
-      <View style={styles.info}>
-        <Text style={styles.name}>{store.name}</Text>
-        <Text style={styles.description} numberOfLines={2}>
+    <TouchableOpacity className='bg-white rounded-lg shadow-xl mb-4 overflow-hidden'>
+      <Image source={imageSource} style={{ width: '100%', height: 200 }} resizeMode="cover" />
+      <View className="p-3">
+        <Text className="text-lg font-bold">{store.name}</Text>
+        <Text className="mt-1 text-sm text-gray-500" numberOfLines={2}>
           {store.description}
         </Text>
       </View>
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    elevation: 3,
-    marginBottom: 16,
-    overflow: 'hidden',
-  },
-  banner: {
-    width: '100%',
-    height: 150,
-  },
-  info: {
-    padding: 12,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  description: {
-    marginTop: 4,
-    fontSize: 14,
-    color: '#666',
-  },
-});
 
 export default StoreCard;
