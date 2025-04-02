@@ -33,8 +33,8 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       <Text className="mt-2">{event.description}</Text>
       <Image
         source={imageSource}
-        style={{ width: '100%', height: 200, marginTop: 10, borderRadius: 8 }}
-        resizeMode="cover"
+        style={{ width: '100%', height: 300, marginTop: 10, borderRadius: 8 }}
+        resizeMode="contain"
       />
     </View>
   );
