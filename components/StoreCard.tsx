@@ -23,10 +23,20 @@ interface StoreCardProps {
   store: Store;
 }
 
+const imageMap: Record<string, any> = {
+  "@/assets/images/stores/burguermania.png": require("@/assets/images/stores/burguermania.png"),
+  "@/assets/images/stores/cantinabella.png": require("@/assets/images/stores/cantinabella.png"),
+  "@/assets/images/stores/sushihouse.png": require("@/assets/images/stores/sushihouse.png"),
+  "@/assets/images/stores/docesecia.png": require("@/assets/images/stores/docesecia.png"),
+  "@/assets/images/stores/pizzamania.png": require("@/assets/images/stores/pizzamania.png"),
+}
+
 const StoreCard: React.FC<StoreCardProps> = ({ store }) => {
+  const imageSource = imageMap[store.banner] || { uri: store.banner };
+
   return (
     <TouchableOpacity style={styles.card}>
-      <Image source={{ uri: store.banner }} style={styles.banner} resizeMode="cover" />
+      <Image source={imageSource} style={styles.banner} resizeMode="cover" />
       <View style={styles.info}>
         <Text style={styles.name}>{store.name}</Text>
         <Text style={styles.description} numberOfLines={2}>
