@@ -2,7 +2,7 @@ export const storesData = [
   {
     id: "1",
     name: "Burguer Mania",
-    banner: "@/assets/images/stores/burguermania.png",
+    banner: "burguermania.png",
     photos: [
       "https://example.com/images/stores/burguer-mania/photo1.png",
       "https://example.com/images/stores/burguer-mania/photo2.png"
@@ -11,9 +11,7 @@ export const storesData = [
     phone: "+55 11 1234-5678",
     whatsapp: "+55 11 98765-4321",
     social: {
-      facebook: "https://facebook.com/burgermania",
       instagram: "https://instagram.com/burgermania",
-      twitter: "https://twitter.com/burgermania"
     },
     email: "contato@burgermania.com.br",
     deliveryLink: "https://deliveryapp.com/burgermania",
@@ -22,7 +20,7 @@ export const storesData = [
   {
     id: "2",
     name: "Cantina Bella",
-    banner: "@/assets/images/stores/cantinabella.png",
+    banner: "cantinabella.png",
     photos: [
       "https://example.com/images/stores/cantina-bella/photo1.png",
       "https://example.com/images/stores/cantina-bella/photo2.png"
@@ -42,7 +40,7 @@ export const storesData = [
   {
     id: "3",
     name: "Sushi House",
-    banner: "@/assets/images/stores/sushihouse.png",
+    banner: "sushihouse.png",
     photos: [
       "https://example.com/images/stores/sushi-house/photo1.png",
       "https://example.com/images/stores/sushi-house/photo2.png"
@@ -62,7 +60,7 @@ export const storesData = [
   {
     id: "4",
     name: "Doces & Cia",
-    banner: "@/assets/images/stores/docesecia.png",
+    banner: "docesecia.png",
     photos: [
       "https://example.com/images/stores/doces-e-cia/photo1.png",
       "https://example.com/images/stores/doces-e-cia/photo2.png"
@@ -82,7 +80,7 @@ export const storesData = [
   {
     id: "5",
     name: "Pizza Mania",
-    banner: "@/assets/images/stores/pizzamania.png",
+    banner: "pizzamania.png",
     photos: [
       "https://example.com/images/stores/pizza-mania/photo1.png",
       "https://example.com/images/stores/pizza-mania/photo2.png"

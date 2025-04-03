@@ -25,11 +25,11 @@ interface StoreCardProps {
 }
 
 const imageMap: Record<string, any> = {
-  "@/assets/images/stores/burguermania.png": require("@/assets/images/stores/burguermania.png"),
-  "@/assets/images/stores/cantinabella.png": require("@/assets/images/stores/cantinabella.png"),
-  "@/assets/images/stores/sushihouse.png": require("@/assets/images/stores/sushihouse.png"),
-  "@/assets/images/stores/docesecia.png": require("@/assets/images/stores/docesecia.png"),
-  "@/assets/images/stores/pizzamania.png": require("@/assets/images/stores/pizzamania.png"),
+  "burguermania.png": require("@/assets/images/stores/burguermania.png"),
+  "cantinabella.png": require("@/assets/images/stores/cantinabella.png"),
+  "sushihouse.png": require("@/assets/images/stores/sushihouse.png"),
+  "docesecia.png": require("@/assets/images/stores/docesecia.png"),
+  "pizzamania.png": require("@/assets/images/stores/pizzamania.png"),
 };
 
 const StoreCard: React.FC<StoreCardProps> = ({ store }) => {

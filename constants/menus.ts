@@ -6,6 +6,8 @@ const restaurantMenus = {
       description: "A timeless burger with a juicy beef patty, melted cheddar cheese, fresh lettuce, tomato, and our special sauce.",
       price: 10.99,
       image: "https://example.com/images/burguer-cheeseburger.png",
+      ingredients: ["beef patty", "cheddar cheese", "lettuce", "tomato", "special sauce", "brioche bun"],
+      quantity: { weight: "200g" }
     },
     {
       id: "2",
@@ -13,6 +15,8 @@ const restaurantMenus = {
       description: "Loaded with crispy bacon, smoky BBQ sauce, and a charbroiled beef patty topped with cheddar cheese.",
       price: 12.99,
       image: "https://example.com/images/burguer-bacon-bbq.png",
+      ingredients: ["beef patty", "cheddar cheese", "bacon", "BBQ sauce", "lettuce", "tomato", "brioche bun"],
+      quantity: { weight: "250g" }
     },
     {
       id: "3",
@@ -20,6 +24,8 @@ const restaurantMenus = {
       description: "Grilled veggie patty, avocado, sprouts, lettuce, tomato, and a hint of garlic aioli.",
       price: 9.99,
       image: "https://example.com/images/burguer-veggie.png",
+      ingredients: ["veggie patty", "avocado", "sprouts", "lettuce", "tomato", "garlic aioli", "whole-grain bun"],
+      quantity: { weight: "180g" }
     }
   ],
   "cantinabella": [
@@ -29,6 +35,8 @@ const restaurantMenus = {
       description: "Traditional Italian pasta with creamy egg sauce, pancetta, and freshly grated Parmesan.",
       price: 13.99,
       image: "https://example.com/images/cantina-carbonara.png",
+      ingredients: ["spaghetti", "egg yolk", "pancetta", "Parmesan cheese", "black pepper"],
+      quantity: { weight: "300g" }
     },
     {
       id: "2",
@@ -36,6 +44,8 @@ const restaurantMenus = {
       description: "Classic wood-fired pizza topped with fresh mozzarella, ripe tomatoes, and basil.",
       price: 14.99,
       image: "https://example.com/images/cantina-margherita.png",
+      ingredients: ["pizza dough", "mozzarella", "tomato", "basil", "olive oil"],
+      quantity: { diameter: "12 inch" }
     },
     {
       id: "3",
@@ -43,6 +53,8 @@ const restaurantMenus = {
       description: "Layered pasta with rich meat sauce, creamy béchamel, and a golden crust of melted cheese.",
       price: 15.99,
       image: "https://example.com/images/cantina-lasagna.png",
+      ingredients: ["lasagna sheets", "meat sauce", "béchamel sauce", "Parmesan cheese"],
+      quantity: { weight: "400g" }
     }
   ],
   "sushihouse": [
@@ -52,6 +64,8 @@ const restaurantMenus = {
       description: "A variety of fresh nigiri, sashimi, and maki rolls to delight every sushi lover.",
       price: 24.99,
       image: "https://example.com/images/sushi-platter.png",
+      ingredients: ["nigiri", "sashimi", "maki rolls", "wasabi", "pickled ginger"],
+      quantity: { units: 12 }
     },
     {
       id: "2",
@@ -59,6 +73,8 @@ const restaurantMenus = {
       description: "Fresh tuna with a kick of spicy mayo and sesame seeds, rolled in seasoned rice.",
       price: 8.99,
       image: "https://example.com/images/sushi-spicy-tuna.png",
+      ingredients: ["tuna", "spicy mayo", "sesame seeds", "nori", "sushi rice"],
+      quantity: { units: 8 }
     },
     {
       id: "3",
@@ -66,6 +82,8 @@ const restaurantMenus = {
       description: "Eel, avocado, and cucumber, drizzled with sweet eel sauce and garnished with tobiko.",
       price: 12.99,
       image: "https://example.com/images/sushi-dragon-roll.png",
+      ingredients: ["eel", "avocado", "cucumber", "eel sauce", "tobiko"],
+      quantity: { units: 8 }
     }
   ],
   "docesecia": [
@@ -75,6 +93,8 @@ const restaurantMenus = {
       description: "Rich molten chocolate cake with a warm, gooey center, served with vanilla ice cream.",
       price: 6.99,
       image: "https://example.com/images/doces-lava-cake.png",
+      ingredients: ["dark chocolate", "butter", "sugar", "flour", "eggs", "vanilla ice cream"],
+      quantity: { weight: "150g" }
     },
     {
       id: "2",
@@ -82,6 +102,8 @@ const restaurantMenus = {
       description: "Moist red velvet cupcake topped with a tangy cream cheese frosting.",
       price: 3.99,
       image: "https://example.com/images/doces-red-velvet.png",
+      ingredients: ["red velvet batter", "cream cheese frosting", "sugar", "eggs"],
+      quantity: { units: 1 }
     },
     {
       id: "3",
@@ -89,6 +111,8 @@ const restaurantMenus = {
       description: "Traditional Italian dessert with layers of coffee-soaked ladyfingers and creamy mascarpone.",
       price: 7.99,
       image: "https://example.com/images/doces-tiramisu.png",
+      ingredients: ["ladyfingers", "mascarpone cheese", "espresso", "cocoa powder"],
+      quantity: { weight: "200g" }
     }
   ],
   "pizzamania": [
@@ -98,6 +122,8 @@ const restaurantMenus = {
       description: "Classic pepperoni pizza with mozzarella and our signature tomato sauce, baked to perfection.",
       price: 12.99,
       image: "https://example.com/images/pizza-pepperoni.png",
+      ingredients: ["pizza dough", "pepperoni", "mozzarella cheese", "tomato sauce"],
+      quantity: { diameter: "12 inch" }
     },
     {
       id: "2",
@@ -105,6 +131,8 @@ const restaurantMenus = {
       description: "A creamy blend of mozzarella, provolone, Parmesan, and gorgonzola, creating a cheesy masterpiece.",
       price: 13.99,
       image: "https://example.com/images/pizza-four-cheese.png",
+      ingredients: ["pizza dough", "mozzarella cheese", "provolone cheese", "Parmesan cheese", "gorgonzola"],
+      quantity: { diameter: "12 inch" }
     },
     {
       id: "3",
@@ -112,6 +140,8 @@ const restaurantMenus = {
       description: "Loaded with fresh bell peppers, onions, mushrooms, olives, and tomatoes on a whole-grain crust.",
       price: 11.99,
       image: "https://example.com/images/pizza-vegetarian.png",
+      ingredients: ["whole-grain crust", "bell peppers", "onions", "mushrooms", "olives", "tomatoes"],
+      quantity: { diameter: "12 inch" }
     }
   ]
 };
