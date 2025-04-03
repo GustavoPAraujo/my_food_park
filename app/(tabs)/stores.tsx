@@ -9,7 +9,7 @@ const Stores = () => {
       <FlatList
         data={storesData}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <StoreCard store={item} />}
+        renderItem={({ item }) => <StoreCard store={item} /> }
         contentContainerStyle={{ padding: 16 }}
       />
     </View>

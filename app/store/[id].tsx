@@ -1,10 +1,23 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, Button, Linking } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
+import { storesData } from '@/constants/stores'; 
 
-const StorePage = ({ route }:any) => {
-  const { store } = route.params; 
+const StorePage = () => {
+  const { id } = useLocalSearchParams<{ id: string }>();
 
-  const openLink = (url: any) => {
+
+  const store = storesData.find((s) => s.id === id);
+
+  if (!store) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Loja não encontrada.</Text>
+      </View>
+    );
+  }
+
+  const openLink = (url: string) => {
     Linking.openURL(url);
   };
 
@@ -17,7 +30,7 @@ const StorePage = ({ route }:any) => {
         resizeMode="cover"
       />
 
-      {/* Store Name and Description */}
+      {/* Nome e Descrição */}
       <View style={{ padding: 16 }}>
         <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{store.name}</Text>
         <Text style={{ marginTop: 8, fontSize: 16, color: '#666' }}>
@@ -25,11 +38,9 @@ const StorePage = ({ route }:any) => {
         </Text>
       </View>
 
-      {/* Photos */}
+      {/* Fotos */}
       <View style={{ padding: 16 }}>
-        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>
-          Photos
-        </Text>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>Fotos</Text>
         <ScrollView horizontal>
           {store.photos.map((photo, index) => (
             <Image
@@ -46,45 +57,27 @@ const StorePage = ({ route }:any) => {
         </ScrollView>
       </View>
 
-      {/* Contact Information */}
+      {/* Contato */}
       <View style={{ padding: 16 }}>
-        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>
-          Contact
-        </Text>
-        <Text>Phone: {store.phone}</Text>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>Contato</Text>
+        <Text>Telefone: {store.phone}</Text>
         <Text>WhatsApp: {store.whatsapp}</Text>
         <Text>Email: {store.email}</Text>
-        <Text
-          style={{ color: 'blue' }}
-          onPress={() => openLink(store.social.facebook)}
-        >
+        <Text style={{ color: 'blue' }} onPress={() => openLink(store.social.facebook)}>
           Facebook
         </Text>
-        <Text
-          style={{ color: 'blue' }}
-          onPress={() => openLink(store.social.instagram)}
-        >
+        <Text style={{ color: 'blue' }} onPress={() => openLink(store.social.instagram)}>
           Instagram
         </Text>
-        <Text
-          style={{ color: 'blue' }}
-          onPress={() => openLink(store.social.twitter)}
-        >
+        <Text style={{ color: 'blue' }} onPress={() => openLink(store.social.twitter)}>
           Twitter
         </Text>
       </View>
 
-      {/* Action Buttons */}
+      {/* Botões de Ação */}
       <View style={{ padding: 16 }}>
-        <Button
-          title="Open Delivery App"
-          onPress={() => openLink(store.deliveryLink)}
-        />
-        <Button
-          title="View Menu"
-          onPress={() => openLink(store.menuLink)}
-          color="#f4511e"
-        />
+        <Button title="Open Delivery App" onPress={() => openLink(store.deliveryLink)} />
+        <Button title="View Menu" onPress={() => openLink(store.menuLink)} color="#f4511e" />
       </View>
     </ScrollView>
   );
