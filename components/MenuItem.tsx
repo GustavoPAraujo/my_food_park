@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item }: any) => {
   return (
     <View style={styles.card}>
       <Image source={{ uri: item.image }} style={styles.image} />
@@ -12,7 +12,7 @@ const MenuItem = ({ item }) => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   card: {

@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import MenuItem from './MenuItem';
-import { menuData } from './menuData';
+import MenuItem from '@/components/MenuItem';
+import menuData from '@/constants/menus';
 
 const MenuPage = () => {
+  const flatMenuData = Object.values(menuData).flat();
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={menuData}
+        data={flatMenuData}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <MenuItem item={item} />}
         contentContainerStyle={styles.listContainer}
