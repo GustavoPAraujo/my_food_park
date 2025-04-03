@@ -35,7 +35,7 @@ export default function EventsPage() {
   );
 
   return (
-    <View className="flex-1 p-4 bg-white">
+    <View className="flex-1 p-4 bg-red-400 pb-24">
       <Text className="text-xl font-bold mb-4">Programação Semanal</Text>
       <FlatList
         data={sortedEvents}

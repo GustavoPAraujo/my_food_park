@@ -12,7 +12,7 @@ const Map = () => {
   return (
     <View>
 
-      <View className=' flex items-center w-5/6 h-60 '>
+      <View className=' flex items-center  h-60 '>
         <MapView
           style={[StyleSheet.absoluteFill]}
           className='h-50% w-50%'

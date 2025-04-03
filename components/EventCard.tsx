@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 interface Event {
   id: string;
@@ -27,16 +27,18 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const imageSource = imageMap[event.image] || { uri: event.image };
 
   return (
-    <View className="mb-6 p-4 bg-white rounded shadow">
-      <Text className="text-xl font-bold">{event.day}</Text>
-      <Text className="text-lg font-semibold mt-2">{event.title}</Text>
-      <Text className="mt-2">{event.description}</Text>
+    <TouchableOpacity>
+      <View className=" p-4 bg-white rounded-t-xl shadow-lg">
+        <Text className="text-3xl font-bold text-red-600">{event.day}</Text>
+        <Text className="text-xl font-semibold mt-2">{event.title}</Text>
+        <Text className="mt-2">{event.description}</Text>
+      </View>
       <Image
-        source={imageSource}
-        style={{ width: '100%', height: 300, marginTop: 10, borderRadius: 8 }}
-        resizeMode="contain"
-      />
-    </View>
+          source={imageSource}
+          className='w-full h-60 mb-6'
+          resizeMode="cover"
+        />
+    </TouchableOpacity>
   );
 };
 
