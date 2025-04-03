@@ -35,11 +35,11 @@ const StoreCard: React.FC<StoreCardProps> = ({ store }) => {
   const imageSource = imageMap[store.banner] || { uri: store.banner };
 
   return (
-    <TouchableOpacity className='bg-white rounded-lg shadow-xl mb-4 overflow-hidden'>
-      <Image source={imageSource} style={{ width: '100%', height: 200 }} resizeMode="cover" />
-      <View className="p-3">
-        <Text className="text-lg font-bold">{store.name}</Text>
-        <Text className="mt-1 text-sm text-gray-500" numberOfLines={2}>
+    <TouchableOpacity className='bg-white rounded-lg shadow-xl shadow-slate-600 mb-4 overflow-hidden'>
+      <Image source={imageSource} className='w-full h-60' resizeMode="cover" />
+      <View className="bg-slate-200 px-2 pb-2">
+        <Text className=" text-lg font-bold">{store.name}</Text>
+        <Text className="mt-1 text-gray-500" numberOfLines={2}>
           {store.description}
         </Text>
       </View>
