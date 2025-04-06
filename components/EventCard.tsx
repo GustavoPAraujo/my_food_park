@@ -45,10 +45,19 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       />
 
       {event.videoUrl && showVideo && (
-        <WebView
-          source={{ uri: event.videoUrl }}
-          style={{ width: '100%', height: 200 }}
-        />
+        <>
+          <TouchableOpacity onPress={() => setShowVideo(false)} className="items-end pr-4 mb-2">
+            <Text className="font-bold text-red-600 bg-white p-2 inline-block">Fechar</Text>
+          </TouchableOpacity>
+  
+          <View className="w-full h-56 mb-4">
+            <WebView
+              source={{ uri: event.videoUrl }}
+              style={{ flex: 1 }}
+            />
+          </View>
+
+        </>
       )}
 
     </TouchableOpacity>
