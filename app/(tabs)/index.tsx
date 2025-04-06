@@ -66,8 +66,7 @@ export default function Index() {
           </Text>
         </View>
 
-        <View className='mt-10 '>
-
+        <View className='mt-2'>
 
           <View className="flex-row justify-between mb-5">
             <SocialIcon
@@ -92,7 +91,7 @@ export default function Index() {
             <Map />
           </View>
 
-          <Text className='text-lg font-bold'>Endereço</Text>
+          <Text className='text-lg font-bold mt-2'>Endereço</Text>
           <Text className='text-sm text-gray-600 mt-2'>
             R. Delfino Conti - Bairro Trindade, Florainópolis
           </Text>
@@ -101,11 +100,7 @@ export default function Index() {
           </Text>
         </View>
 
-
-
       </ScrollView>
-
-
     </View>
   )
 }
