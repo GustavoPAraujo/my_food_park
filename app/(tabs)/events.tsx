@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import EventCard from '@/components/EventCard';
-import eventsData from '@/assets/data/events.json';
+import Events from '@/constants/events';
 
 interface Event {
   id: string;
@@ -9,6 +9,7 @@ interface Event {
   title: string;
   description: string;
   image: string;
+  videoUrl: string;
 }
 
 export default function EventsPage() {
@@ -16,7 +17,7 @@ export default function EventsPage() {
 
   useEffect(() => {
 
-    setEvents(eventsData);
+    setEvents(Events);
   }, []);
 
 

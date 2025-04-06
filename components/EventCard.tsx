@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import Video from 'react-native-video';
+import { WebView } from 'react-native-webview';
+
 
 interface Event {
   id: string;
@@ -8,7 +9,7 @@ interface Event {
   title: string;
   description: string;
   image: string;
-  video?: string;
+  videoUrl?: string;
 }
 
 interface EventCardProps {
@@ -30,9 +31,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const imageSource = imageMap[event.image] || { uri: event.image };
 
   return (
-    <TouchableOpacity onPress={() => {
-                                    setShowVideo(true); console.log(showVideo)
-                                    }}>
+    <TouchableOpacity onPress={() => { setShowVideo(true) }}>
 
       <View className="p-4 bg-white rounded-t-xl shadow-lg">
         <Text className="text-3xl font-bold text-red-600">{event.day}</Text>
@@ -44,12 +43,11 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
         className="w-full h-60 mb-4"
         resizeMode="cover"
       />
-      {event.video && showVideo && (
-        <Video
-          source={{ uri: "https://www.youtube.com/watch?v=jft3BVoxqjo"}}
+
+      {event.videoUrl && showVideo && (
+        <WebView
+          source={{ uri: event.videoUrl }}
           style={{ width: '100%', height: 200 }}
-          controls
-          resizeMode="cover"
         />
       )}
 
