@@ -4,14 +4,18 @@ export const storesData = [
     name: "Burguer Mania",
     banner: "burguermania.png",
     photos: [
-      "https://example.com/images/stores/burguer-mania/photo1.png",
-      "https://example.com/images/stores/burguer-mania/photo2.png"
+      require('@/assets/images/stores/burguermania/photo1.png'),
+      require('@/assets/images/stores/burguermania/photo2.png'),
+      require('@/assets/images/stores/burguermania/photo3.png'),
     ],
+
     description: "Burgers deliciosos com ingredientes frescos e exclusivos.",
     phone: "+55 11 1234-5678",
     whatsapp: "+55 11 98765-4321",
     social: {
       instagram: "https://instagram.com/burgermania",
+      facebook: "https://facebook.com/burgermania",
+      twitter: "https://twitter.com/burgermania"
     },
     email: "contato@burgermania.com.br",
     deliveryLink: "https://deliveryapp.com/burgermania",

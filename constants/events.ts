@@ -6,7 +6,8 @@ const Events =
       "title": "Noite de Jazz & Blues",
       "description": "Inicie a semana com uma atmosfera relaxante, combinando o melhor do jazz e blues ao vivo.",
       "image": "@/assets/images/events/event1.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://www.pexels.com/video/live-band-performing-9419428/"
+      //https://www.youtube.com/watch?v=jft3BVoxqjo
     },
     {
       "id": "2",

@@ -11,9 +11,9 @@ interface Store {
   phone: string;
   whatsapp: string;
   social: {
-    facebook: string;
-    instagram: string;
-    twitter: string;
+    facebook?: string;
+    instagram?: string;
+    twitter?: string;
   };
   email: string;
   deliveryLink: string;

@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, Button, Linking } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { storesData } from '@/constants/stores'; 
+import { storesData } from '@/constants/stores';
+import { SocialIcon } from 'react-native-elements';
+import { openURL } from '@/components/SocialButtonsUrl';
 
 const StorePage = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -18,7 +20,7 @@ const StorePage = () => {
 
   if (!store) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View className='flex justify-center items-center' >
         <Text>Loja não encontrada.</Text>
       </View>
     );
@@ -29,52 +31,60 @@ const StorePage = () => {
   };
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
-      {/* Banner */}
+    <ScrollView className='flex bg-white' >
       <Image
         source={bannerMap[store.banner]}
-        style={{ width: '100%', height: 200 }}
+        className="w-full h-60"
         resizeMode="cover"
       />
 
-      {/* Nome e Descrição */}
-      <View style={{ padding: 16 }}>
-        <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{store.name}</Text>
-        <Text style={{ marginTop: 8, fontSize: 16, color: '#666' }}>
+      <View className='px-5 pt-3'>
+        <Text className='text-2xl font-bold' >{store.name}</Text>
+        <Text className='mt-2 text-lg text-gray-500' >
           {store.description}
         </Text>
       </View>
 
-      {/* Fotos */}
-      <View style={{ padding: 16 }}>
-        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>Fotos</Text>
+      <View className='px-5 pt-3'>
+        <Text className='text-xl font-bold mb-4'>Fotos</Text>
         <ScrollView horizontal>
           {store.photos.map((photo, index) => (
             <Image
               key={index}
-              source={{ uri: photo }}
-              style={{
-                width: 100,
-                height: 100,
-                borderRadius: 8,
-                marginRight: 8,
-              }}
+              source={photo}
+              className='w-40 h-40 rounded-lg mr-4'
             />
           ))}
         </ScrollView>
+
+
       </View>
 
-      {/* Contato */}
-      <View style={{ padding: 16 }}>
-        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>Contato</Text>
+      <View className='px-5 pt-3'>
+
+        <Text className='text-xl font-bold mb-1' >Contato</Text>
         <Text>Telefone: {store.phone}</Text>
         <Text>WhatsApp: {store.whatsapp}</Text>
         <Text>Email: {store.email}</Text>
+      </View>
 
-        <Text style={{ color: 'blue' }} onPress={() => openLink(store.social.instagram)}>
-          Instagram
-        </Text>
-
+      <View className='px-5 pt-3 flex-row justify-between'>
+        <SocialIcon
+          type="instagram"
+          onPress={() => openURL(store.social.instagram)}
+        />
+        <SocialIcon
+          type="facebook"
+          onPress={() => openURL(store.social.facebook)}
+        />
+        <SocialIcon
+          type="twitter"
+          onPress={() => openURL(store.social.twitter)}
+        />
+        <SocialIcon
+          type="whatsapp"
+          onPress={() => openURL(store.whatsapp)}
+        />
       </View>
 
       {/* Botões de Ação */}
