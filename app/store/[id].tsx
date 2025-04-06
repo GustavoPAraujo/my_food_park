@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, Button, Linking } from 'react-native';
+import { View, Text, Image, ScrollView, Button, Linking, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { storesData } from '@/constants/stores';
 import { SocialIcon } from 'react-native-elements';
 import { openURL } from '@/components/SocialButtonsUrl';
+import { useNavigation } from '@react-navigation/native';
+
 
 const StorePage = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const navigation = useNavigation();
+
 
   const store = storesData.find((s) => s.id === id);
 
@@ -31,68 +35,78 @@ const StorePage = () => {
   };
 
   return (
-    <ScrollView className='flex bg-white' >
-      <Image
-        source={bannerMap[store.banner]}
-        className="w-full h-60"
-        resizeMode="cover"
-      />
-
-      <View className='px-5 pt-3'>
-        <Text className='text-2xl font-bold' >{store.name}</Text>
-        <Text className='mt-2 text-lg text-gray-500' >
-          {store.description}
-        </Text>
-      </View>
-
-      <View className='px-5 pt-3'>
-        <Text className='text-xl font-bold mb-4'>Fotos</Text>
-        <ScrollView horizontal>
-          {store.photos.map((photo, index) => (
-            <Image
-              key={index}
-              source={photo}
-              className='w-40 h-40 rounded-lg mr-4'
-            />
-          ))}
-        </ScrollView>
-
-
-      </View>
-
-      <View className='px-5 pt-3'>
-
-        <Text className='text-xl font-bold mb-1' >Contato</Text>
-        <Text>Telefone: {store.phone}</Text>
-        <Text>WhatsApp: {store.whatsapp}</Text>
-        <Text>Email: {store.email}</Text>
-      </View>
-
-      <View className='px-5 pt-3 flex-row justify-between'>
-        <SocialIcon
-          type="instagram"
-          onPress={() => openURL(store.social.instagram)}
+    <>
+      <TouchableOpacity
+        className='absolute  top-3 left-3 bg-white p-1.5 rounded-md z-50'
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <Text className='text-black'>Voltar</Text>
+      </TouchableOpacity>
+      <ScrollView className='flex bg-white' >
+        <Image
+          source={bannerMap[store.banner]}
+          className="w-full h-60"
+          resizeMode="cover"
         />
-        <SocialIcon
-          type="facebook"
-          onPress={() => openURL(store.social.facebook)}
-        />
-        <SocialIcon
-          type="twitter"
-          onPress={() => openURL(store.social.twitter)}
-        />
-        <SocialIcon
-          type="whatsapp"
-          onPress={() => openURL(store.whatsapp)}
-        />
-      </View>
 
-      {/* Botões de Ação */}
-      <View style={{ padding: 16 }}>
-        <Button title="Open Delivery App" onPress={() => openLink(store.deliveryLink)} />
-        <Button title="View Menu" onPress={() => openLink(store.menuLink)} color="#f4511e" />
-      </View>
-    </ScrollView>
+        <View className='px-5 pt-3'>
+          <Text className='text-2xl font-bold' >{store.name}</Text>
+          <Text className='mt-2 text-lg text-gray-500' >
+            {store.description}
+          </Text>
+        </View>
+
+        <View className='px-5 pt-3'>
+          <Text className='text-xl font-bold mb-4'>Fotos</Text>
+          <ScrollView horizontal>
+            {store.photos.map((photo, index) => (
+              <Image
+                key={index}
+                source={photo}
+                className='w-40 h-40 rounded-lg mr-4'
+              />
+            ))}
+          </ScrollView>
+
+
+        </View>
+
+        <View className='px-5 pt-3'>
+
+          <Text className='text-xl font-bold mb-1' >Contato</Text>
+          <Text>Telefone: {store.phone}</Text>
+          <Text>WhatsApp: {store.whatsapp}</Text>
+          <Text>Email: {store.email}</Text>
+        </View>
+
+        <View className='px-5 pt-3 flex-row justify-between'>
+          <SocialIcon
+            type="instagram"
+            onPress={() => openURL(store.social.instagram)}
+          />
+          <SocialIcon
+            type="facebook"
+            onPress={() => openURL(store.social.facebook)}
+          />
+          <SocialIcon
+            type="twitter"
+            onPress={() => openURL(store.social.twitter)}
+          />
+          <SocialIcon
+            type="whatsapp"
+            onPress={() => openURL(store.whatsapp)}
+          />
+        </View>
+
+        {/* Botões de Ação */}
+        <View style={{ padding: 16 }}>
+          <Button title="Open Delivery App" onPress={() => openLink(store.deliveryLink)} />
+          <Button title="View Menu" onPress={() => openLink(store.menuLink)} color="#f4511e" />
+        </View>
+      </ScrollView>
+    </>
   );
 };
 

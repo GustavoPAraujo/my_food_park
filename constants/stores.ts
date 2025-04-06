@@ -8,7 +8,6 @@ export const storesData = [
       require('@/assets/images/stores/burguermania/photo2.png'),
       require('@/assets/images/stores/burguermania/photo3.png'),
     ],
-
     description: "Burgers deliciosos com ingredientes frescos e exclusivos.",
     phone: "+55 11 1234-5678",
     whatsapp: "+55 11 98765-4321",
