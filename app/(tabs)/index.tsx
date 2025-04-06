@@ -1,7 +1,9 @@
-import { View, Text, Image, ScrollView } from 'react-native'
+import { View, Text, Image, ScrollView, ViewBase } from 'react-native'
 import React from 'react'
 import { images } from '@/constants/images'
 import Map from "@/components/Map"
+import { SocialIcon } from 'react-native-elements';
+import { openURL } from '@/components/SocialButtonsUrl';
 
 const photos = [
   require('@/assets/images/banner1.png'),
@@ -12,9 +14,9 @@ const photos = [
 
 export default function Index() {
   return (
-    <View className='flex-1 items-center'>
+    <View className='flex-1 items-center bg-white'>
 
-      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 180 }}>
+      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 100 }}>
         <Image source={images.logoSemFundo} className='h-60 w-60' />
 
         <ScrollView
@@ -25,11 +27,11 @@ export default function Index() {
           className='bg-red-500 py-4'
         >
           {Object.keys(images).filter(key => key.startsWith('banner')).map((key, index) => (
-            <Image 
-              key={index} 
-              source={images[key]} 
-              style={{ height: 200, width: 340, marginHorizontal: 10 }} 
-              />
+            <Image
+              key={index}
+              source={images[key]}
+              style={{ height: 200, width: 340, marginHorizontal: 10 }}
+            />
           ))}
         </ScrollView>
 
@@ -65,6 +67,26 @@ export default function Index() {
         </View>
 
         <View className='mt-10 '>
+
+
+          <View className="flex-row justify-between mb-5">
+            <SocialIcon
+              type="instagram"
+              onPress={() => openURL('https://www.instagram.com/yourprofile')}
+            />
+            <SocialIcon
+              type="facebook"
+              onPress={() => openURL('https://www.facebook.com/yourprofile')}
+            />
+            <SocialIcon
+              type="twitter"
+              onPress={() => openURL('https://www.x.com/yourprofile')}
+            />
+            <SocialIcon
+              type="whatsapp"
+              onPress={() => openURL('https://www.whatsapp.com/yourprofile')}
+            />
+          </View>
 
           <View>
             <Map />
