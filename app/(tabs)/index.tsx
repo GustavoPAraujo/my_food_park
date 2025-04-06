@@ -1,10 +1,9 @@
-import { View, Text, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { images } from '@/constants/images'
-import SocialIcon from '@/components/socialIcon'
 import Map from "@/components/Map"
 
-const photos= [
+const photos = [
   require('@/assets/images/banner1.png'),
   require('@/assets/images/banner2.png'),
   require('@/assets/images/banner3.png')
@@ -18,17 +17,21 @@ export default function Index() {
       <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 180 }}>
         <Image source={images.logoSemFundo} className='h-60 w-60' />
 
-        <View>
         <ScrollView
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-          >
-            {photos.map((photo, index) => (
-              <Image key={index} source={photo} />
-            ))}
-          </ScrollView>
-        </View>
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ alignItems: 'center' }}
+          className='bg-red-500 py-4'
+        >
+          {Object.keys(images).filter(key => key.startsWith('banner')).map((key, index) => (
+            <Image 
+              key={index} 
+              source={images[key]} 
+              style={{ height: 200, width: 340, marginHorizontal: 10 }} 
+              />
+          ))}
+        </ScrollView>
 
         <View className="p-4 bg-white">
 
@@ -76,11 +79,7 @@ export default function Index() {
           </Text>
         </View>
 
-        <View className='flex-1 flex-row gap-2 mt-10'>
-          <SocialIcon name="Instagram" />
-          <SocialIcon name="Twitter" />
-          <SocialIcon name="WhatsApp" />
-        </View>
+
 
       </ScrollView>
 
