@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import Video from 'react-native-video';
 
 interface Event {
   id: string;
@@ -7,6 +8,7 @@ interface Event {
   title: string;
   description: string;
   image: string;
+  video?: string;
 }
 
 interface EventCardProps {
@@ -24,20 +26,33 @@ const imageMap: Record<string, any> = {
 };
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
+  const [showVideo, setShowVideo] = useState(false);
   const imageSource = imageMap[event.image] || { uri: event.image };
 
   return (
-    <TouchableOpacity>
-      <View className=" p-4 bg-white rounded-t-xl shadow-lg">
+    <TouchableOpacity onPress={() => {
+                                    setShowVideo(true); console.log(showVideo)
+                                    }}>
+
+      <View className="p-4 bg-white rounded-t-xl shadow-lg">
         <Text className="text-3xl font-bold text-red-600">{event.day}</Text>
         <Text className="text-xl font-semibold mt-2">{event.title}</Text>
         <Text className="mt-2">{event.description}</Text>
       </View>
       <Image
-          source={imageSource}
-          className='w-full h-60 mb-6'
+        source={imageSource}
+        className="w-full h-60 mb-4"
+        resizeMode="cover"
+      />
+      {event.video && showVideo && (
+        <Video
+          source={{ uri: "https://www.youtube.com/watch?v=jft3BVoxqjo"}}
+          style={{ width: '100%', height: 200 }}
+          controls
           resizeMode="cover"
         />
+      )}
+
     </TouchableOpacity>
   );
 };

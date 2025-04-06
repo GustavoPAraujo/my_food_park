@@ -5,7 +5,8 @@ export const events = [
       "day": "Segunda-feira",
       "title": "Noite de Jazz & Blues",
       "description": "Inicie a semana com uma atmosfera relaxante, combinando o melhor do jazz e blues ao vivo.",
-      "image": "@/assets/images/events/event1.png"
+      "image": "@/assets/images/events/event1.png",
+      "video": "https://www.youtube.com/watch?v=jft3BVoxqjo"
     },
     {
       "id": "2",
