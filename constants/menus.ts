@@ -1,5 +1,5 @@
 const restaurantMenus = {
-  "burguermania": [
+  "1": [
     {
       id: "1",
       name: "Classic Cheeseburger",
@@ -28,7 +28,7 @@ const restaurantMenus = {
       quantity: { weight: "180g" }
     }
   ],
-  "cantinabella": [
+  "2": [
     {
       id: "1",
       name: "Spaghetti Carbonara",
@@ -57,7 +57,7 @@ const restaurantMenus = {
       quantity: { weight: "400g" }
     }
   ],
-  "sushihouse": [
+  "3": [
     {
       id: "1",
       name: "Sushi Platter",
@@ -86,7 +86,7 @@ const restaurantMenus = {
       quantity: { units: 8 }
     }
   ],
-  "docesecia": [
+  "4": [
     {
       id: "1",
       name: "Chocolate Lava Cake",
@@ -115,7 +115,7 @@ const restaurantMenus = {
       quantity: { weight: "200g" }
     }
   ],
-  "pizzamania": [
+  "5": [
     {
       id: "1",
       name: "Pepperoni Pizza",

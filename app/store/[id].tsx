@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, Button, Linking, TouchableOpacity } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, Link } from 'expo-router';
 import { storesData } from '@/constants/stores';
 import { SocialIcon } from 'react-native-elements';
 import { openURL } from '@/components/SocialButtonsUrl';
@@ -59,7 +59,7 @@ const StorePage = () => {
         </View>
 
         <View className='px-5 pt-3'>
-          <Text className='text-xl font-bold mb-4'>Fotos</Text>
+          <Text className='text-xl font-bold mb-2'>Fotos</Text>
           <ScrollView horizontal>
             {store.photos.map((photo, index) => (
               <Image
@@ -69,12 +69,27 @@ const StorePage = () => {
               />
             ))}
           </ScrollView>
+        </View>
 
+        <View className="px-5 pt-8 flex flex-row space-x-8 justify-around">
+          <TouchableOpacity
+            className="flex-1 bg-blue-500 py-3 rounded-lg items-center"
+            onPress={() => openLink(store.deliveryLink)}
+          >
+            <Text className="text-white text-lg font-bold">Delivery App</Text>
+          </TouchableOpacity>
+
+          <Link href={{ pathname: "/menu/[id]", params: { id: store.id } }} asChild>
+            <TouchableOpacity
+              className="flex-1 bg-red-500 py-3 rounded-lg items-center"
+            >
+              <Text className="text-white text-lg font-bold">Ver Menu</Text>
+            </TouchableOpacity>
+          </Link>
 
         </View>
 
         <View className='px-5 pt-3'>
-
           <Text className='text-xl font-bold mb-1' >Contato</Text>
           <Text>Telefone: {store.phone}</Text>
           <Text>WhatsApp: {store.whatsapp}</Text>
@@ -100,11 +115,6 @@ const StorePage = () => {
           />
         </View>
 
-        {/* Botões de Ação */}
-        <View style={{ padding: 16 }}>
-          <Button title="Open Delivery App" onPress={() => openLink(store.deliveryLink)} />
-          <Button title="View Menu" onPress={() => openLink(store.menuLink)} color="#f4511e" />
-        </View>
       </ScrollView>
     </>
   );
