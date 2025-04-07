@@ -105,11 +105,12 @@ function CustomTabBar({ state, descriptors, navigation }: any) {
     <View
       style={{
         flexDirection: "row",
-        backgroundColor: "#fff",
+        alignItems: "center",
+        backgroundColor: "#fa9a93",
         borderRadius: 50,
-        marginHorizontal: 10,
-        marginBottom: 32,
-        height: 56,
+        marginHorizontal: 12,
+        marginBottom: 30,
+        height: 60,
         position: "absolute",
         left: 0,
         right: 0,
