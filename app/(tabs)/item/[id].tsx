@@ -65,7 +65,10 @@ const ItemDetails = () => {
   }
 
   return (
-    <ScrollView className="flex bg-white p-4 pb-20">
+    <ScrollView 
+      className="flex bg-white p-4"
+      contentContainerStyle={{ paddingBottom: 120 }}
+    >
       <Image
         source={imageMap[item.image]}
         className="w-full h-80 rounded-lg mb-4"
@@ -88,7 +91,7 @@ const ItemDetails = () => {
 
 
       <TouchableOpacity 
-        className="bg-red-600 flex justify-center items-center h-10 "
+        className="bg-red-600 flex justify-center items-center h-16 mt-6 rounded-lg "
         onPress={handleAddToCart}
       >
         <Text className="text-white font-bold text-lg">Adicionar ao carrinho</Text>
