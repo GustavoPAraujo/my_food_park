@@ -1,36 +1,36 @@
 const restaurantMenus = {
   "1": [
     {
-      id: "1",
+      id: "111",
       name: "Classic Cheeseburger",
       description: "A timeless burger with a juicy beef patty, melted cheddar cheese, fresh lettuce, tomato, and our special sauce.",
       price: 10.99,
-      image: "https://example.com/images/burguer-cheeseburger.png",
+      image: "@/assets/images/menu/burguermania/classic.png",
       ingredients: ["beef patty", "cheddar cheese", "lettuce", "tomato", "special sauce", "brioche bun"],
       quantity: { weight: "200g" }
     },
     {
-      id: "2",
+      id: "112",
       name: "Bacon BBQ Burger",
       description: "Loaded with crispy bacon, smoky BBQ sauce, and a charbroiled beef patty topped with cheddar cheese.",
       price: 12.99,
-      image: "https://example.com/images/burguer-bacon-bbq.png",
+      image: "@/assets/images/menu/burguermania/bacon.png",
       ingredients: ["beef patty", "cheddar cheese", "bacon", "BBQ sauce", "lettuce", "tomato", "brioche bun"],
       quantity: { weight: "250g" }
     },
     {
-      id: "3",
+      id: "113",
       name: "Veggie Delight",
       description: "Grilled veggie patty, avocado, sprouts, lettuce, tomato, and a hint of garlic aioli.",
       price: 9.99,
-      image: "https://example.com/images/burguer-veggie.png",
+      image: "@/assets/images/menu/burguermania/veggie.png",
       ingredients: ["veggie patty", "avocado", "sprouts", "lettuce", "tomato", "garlic aioli", "whole-grain bun"],
       quantity: { weight: "180g" }
     }
   ],
   "2": [
     {
-      id: "1",
+      id: "121",
       name: "Spaghetti Carbonara",
       description: "Traditional Italian pasta with creamy egg sauce, pancetta, and freshly grated Parmesan.",
       price: 13.99,
@@ -39,7 +39,7 @@ const restaurantMenus = {
       quantity: { weight: "300g" }
     },
     {
-      id: "2",
+      id: "122",
       name: "Margherita Pizza",
       description: "Classic wood-fired pizza topped with fresh mozzarella, ripe tomatoes, and basil.",
       price: 14.99,
@@ -48,7 +48,7 @@ const restaurantMenus = {
       quantity: { diameter: "12 inch" }
     },
     {
-      id: "3",
+      id: "123",
       name: "Lasagna al Forno",
       description: "Layered pasta with rich meat sauce, creamy béchamel, and a golden crust of melted cheese.",
       price: 15.99,
@@ -59,7 +59,7 @@ const restaurantMenus = {
   ],
   "3": [
     {
-      id: "1",
+      id: "131",
       name: "Sushi Platter",
       description: "A variety of fresh nigiri, sashimi, and maki rolls to delight every sushi lover.",
       price: 24.99,
@@ -68,7 +68,7 @@ const restaurantMenus = {
       quantity: { units: 12 }
     },
     {
-      id: "2",
+      id: "132",
       name: "Spicy Tuna Roll",
       description: "Fresh tuna with a kick of spicy mayo and sesame seeds, rolled in seasoned rice.",
       price: 8.99,
@@ -77,7 +77,7 @@ const restaurantMenus = {
       quantity: { units: 8 }
     },
     {
-      id: "3",
+      id: "133",
       name: "Dragon Roll",
       description: "Eel, avocado, and cucumber, drizzled with sweet eel sauce and garnished with tobiko.",
       price: 12.99,
@@ -88,7 +88,7 @@ const restaurantMenus = {
   ],
   "4": [
     {
-      id: "1",
+      id: "141",
       name: "Chocolate Lava Cake",
       description: "Rich molten chocolate cake with a warm, gooey center, served with vanilla ice cream.",
       price: 6.99,
@@ -97,7 +97,7 @@ const restaurantMenus = {
       quantity: { weight: "150g" }
     },
     {
-      id: "2",
+      id: "142",
       name: "Red Velvet Cupcake",
       description: "Moist red velvet cupcake topped with a tangy cream cheese frosting.",
       price: 3.99,
@@ -106,7 +106,7 @@ const restaurantMenus = {
       quantity: { units: 1 }
     },
     {
-      id: "3",
+      id: "143",
       name: "Tiramisu",
       description: "Traditional Italian dessert with layers of coffee-soaked ladyfingers and creamy mascarpone.",
       price: 7.99,
@@ -117,7 +117,7 @@ const restaurantMenus = {
   ],
   "5": [
     {
-      id: "1",
+      id: "151",
       name: "Pepperoni Pizza",
       description: "Classic pepperoni pizza with mozzarella and our signature tomato sauce, baked to perfection.",
       price: 12.99,
@@ -126,7 +126,7 @@ const restaurantMenus = {
       quantity: { diameter: "12 inch" }
     },
     {
-      id: "2",
+      id: "152",
       name: "Four Cheese Pizza",
       description: "A creamy blend of mozzarella, provolone, Parmesan, and gorgonzola, creating a cheesy masterpiece.",
       price: 13.99,
@@ -135,7 +135,7 @@ const restaurantMenus = {
       quantity: { diameter: "12 inch" }
     },
     {
-      id: "3",
+      id: "153",
       name: "Vegetarian Pizza",
       description: "Loaded with fresh bell peppers, onions, mushrooms, olives, and tomatoes on a whole-grain crust.",
       price: 11.99,
