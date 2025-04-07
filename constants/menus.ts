@@ -1,4 +1,20 @@
-const restaurantMenus = {
+type Quantity =
+  | { "peso": string }
+  | { "diametro": string }
+  | { "unidades": number };
+
+const restaurantMenus: {
+  [key: string]: {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    image: string;
+    ingredients: string[];
+    quantity: Quantity;
+  }[];
+
+} = {
   "1": [
     {
       "id": "111",
@@ -103,7 +119,7 @@ const restaurantMenus = {
       "price": 3.99,
       "image": "@/assets/images/menu/docesecia/redvelvet.png",
       "ingredients": ["massa red velvet", "cobertura de cream cheese", "açúcar", "ovos"],
-      "quantity": { "unidade": 1 }
+      "quantity": { "unidades": 1 }
     },
     {
       "id": "143",

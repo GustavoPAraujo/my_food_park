@@ -49,7 +49,13 @@ const ItemDetails = () => {
       <Text className="text-2xl font-bold mb-2">{item.name}</Text>
       <Text className="text-md text-gray-600 mb-2">{item.description}</Text>
       <Text className="text-lg font-semibold mb-2">Preço: R$ {item.price.toFixed(2)}</Text>
-      <Text className="text-lg font-semibold mb-2">Quantidade: </Text>
+      <Text className="text-lg font-semibold mb-2">
+        {("peso" in item.quantity && `Peso: ${item.quantity.peso}`) ||
+          ("diametro" in item.quantity && `Diâmetro: ${item.quantity.diametro}`) ||
+          ("unidades" in item.quantity && `Unidades: ${item.quantity.unidades}`)}
+      </Text>
+
+
       <Text className="text-xl font-bold mb-2">Ingredientes:</Text>
       {item.ingredients.map((ingredient, index) => (
         <Text key={index} className="text-gray-600">{ingredient}</Text>
