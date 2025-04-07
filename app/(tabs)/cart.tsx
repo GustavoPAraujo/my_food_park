@@ -39,9 +39,14 @@ const CartPage = () => {
   };
 
   const updateQuantity = async (id: string, newQuantity: number) => {
-    const updatedCart = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity: newQuantity } : item
-    );
+    let updatedCart;
+    if (newQuantity <= 0) {
+      updatedCart = cartItems.filter((item) => item.id !== id);
+    } else {
+      updatedCart = cartItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      );
+    }
     setCartItems(updatedCart);
     await AsyncStorage.setItem("cart", JSON.stringify(updatedCart));
   };
@@ -61,7 +66,7 @@ const CartPage = () => {
   }, []);
 
   return (
-    <ScrollView className="flex bg-white p-4">
+    <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 100  }}>
       <Text className="text-2xl font-bold mb-4">Carrinho de Compras</Text>
       {cartItems.length === 0 ? (
         <Text className="text-gray-500">Carrinho vazio.</Text>
