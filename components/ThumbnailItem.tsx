@@ -30,17 +30,13 @@ const imageMap: Record<string, any> = {
   "@/assets/images/menu/pizzamania/pepperoni.png": require("@/assets/images/menu/pizzamania/pepperoni.png"),
   "@/assets/images/menu/pizzamania/cheese.png": require("@/assets/images/menu/pizzamania/cheese.png"),
   "@/assets/images/menu/pizzamania/vegetarian.png": require("@/assets/images/menu/pizzamania/vegetarian.png"),
-
-
 };
-
-
 
 const ThumbnailItem: React.FC<ThumbnailItemProps> = ({ id, name, price, image }) => {
   const resolvedImage = imageMap[image];
 
   return (
-    <Link href={{ pathname: "/menu/item/[id]", params: { id } }} asChild>
+    <Link href={{ pathname: "/item/[id]", params: { id } }} asChild>
       <TouchableOpacity className="flex flex-row p-3 bg-slate-200 rounded-lg shadow-md mb-6">
 
         {resolvedImage && (
