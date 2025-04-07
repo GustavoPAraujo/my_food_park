@@ -11,7 +11,7 @@ const MenuPage = () => {
   const menuItems = restaurantMenus[id] || [];
 
   return (
-    <ScrollView className="flex bg-white p-4">
+    <ScrollView className="flex bg-white p-4 mb-20">
       {menuItems.length > 0 ? (
         menuItems.map((item) => (
           <ThumbnailItem

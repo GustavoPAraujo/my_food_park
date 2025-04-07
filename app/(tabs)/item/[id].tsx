@@ -65,7 +65,7 @@ const ItemDetails = () => {
   }
 
   return (
-    <ScrollView className="flex bg-white p-4">
+    <ScrollView className="flex bg-white p-4 pb-20">
       <Image
         source={imageMap[item.image]}
         className="w-full h-80 rounded-lg mb-4"

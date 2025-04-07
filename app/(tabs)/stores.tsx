@@ -5,7 +5,7 @@ import { storesData } from '@/constants/stores';
 
 const Stores = () => {
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-white pb-20">
       <FlatList
         data={storesData}
         keyExtractor={(item) => item.id}

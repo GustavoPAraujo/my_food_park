@@ -35,7 +35,7 @@ const StorePage = () => {
   };
 
   return (
-    <>
+    <View className='bg-white'>
       <TouchableOpacity
         className='absolute  top-3 left-3 bg-white p-1.5 rounded-md z-50'
         onPress={() => {
@@ -44,7 +44,7 @@ const StorePage = () => {
       >
         <Text className='text-black'>Voltar</Text>
       </TouchableOpacity>
-      <ScrollView className='flex bg-white' >
+      <ScrollView className='flex bg-white mb-28' >
         <Image
           source={bannerMap[store.banner]}
           className="w-full h-60"
@@ -116,7 +116,7 @@ const StorePage = () => {
         </View>
 
       </ScrollView>
-    </>
+    </View>
   );
 };
 
