@@ -4,9 +4,9 @@ export const storesData = [
     name: "Burguer Mania",
     banner: "burguermania.png",
     photos: [
-      require('@/assets/images/stores/burguermania/photo1.png'),
-      require('@/assets/images/stores/burguermania/photo2.png'),
-      require('@/assets/images/stores/burguermania/photo3.png'),
+      require("@/assets/images/menu/burguermania/classic.png"),
+      require("@/assets/images/menu/burguermania/bacon.png"),
+      require("@/assets/images/menu/burguermania/veggie.png"),
     ],
     description: "Burgers deliciosos com ingredientes frescos e exclusivos.",
     phone: "+55 11 1234-5678",
@@ -25,8 +25,9 @@ export const storesData = [
     name: "Cantina Bella",
     banner: "cantinabella.png",
     photos: [
-      "https://example.com/images/stores/cantina-bella/photo1.png",
-      "https://example.com/images/stores/cantina-bella/photo2.png"
+      require("@/assets/images/menu/cantinabella/carbonara.png"),
+      require("@/assets/images/menu/cantinabella/margherita.png"),
+      require("@/assets/images/menu/cantinabella/lasagna.png"),
     ],
     description: "Comida italiana tradicional com um toque contemporâneo.",
     phone: "+55 21 2345-6789",
@@ -45,8 +46,9 @@ export const storesData = [
     name: "Sushi House",
     banner: "sushihouse.png",
     photos: [
-      "https://example.com/images/stores/sushi-house/photo1.png",
-      "https://example.com/images/stores/sushi-house/photo2.png"
+      require("@/assets/images/menu/sushihouse/platter.png"),
+      require("@/assets/images/menu/sushihouse/tuna.png"),
+      require("@/assets/images/menu/sushihouse/roll.png"),
     ],
     description: "Experiência gastronômica japonesa com os melhores sushis e sashimis.",
     phone: "+55 31 3456-7890",
@@ -65,8 +67,9 @@ export const storesData = [
     name: "Doces & Cia",
     banner: "docesecia.png",
     photos: [
-      "https://example.com/images/stores/doces-e-cia/photo1.png",
-      "https://example.com/images/stores/doces-e-cia/photo2.png"
+      require("@/assets/images/menu/docesecia/lavacake.png"),
+      require("@/assets/images/menu/docesecia/redvelvet.png"),
+      require("@/assets/images/menu/docesecia/tiramisu.png"),
     ],
     description: "Variedade de sobremesas, doces e confeitaria artesanal.",
     phone: "+55 41 4567-8901",
@@ -85,8 +88,9 @@ export const storesData = [
     name: "Pizza Mania",
     banner: "pizzamania.png",
     photos: [
-      "https://example.com/images/stores/pizza-mania/photo1.png",
-      "https://example.com/images/stores/pizza-mania/photo2.png"
+      require("@/assets/images/menu/pizzamania/pepperoni.png"),
+      require("@/assets/images/menu/pizzamania/cheese.png"),
+      require("@/assets/images/menu/pizzamania/vegetarian.png"),
     ],
     description: "Pizzas artesanais assadas em forno a lenha com ingredientes selecionados.",
     phone: "+55 51 5678-9012",

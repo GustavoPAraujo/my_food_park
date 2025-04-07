@@ -34,7 +34,7 @@ const restaurantMenus = {
       name: "Spaghetti Carbonara",
       description: "Traditional Italian pasta with creamy egg sauce, pancetta, and freshly grated Parmesan.",
       price: 13.99,
-      image: "https://example.com/images/cantina-carbonara.png",
+      image: "@/assets/images/menu/cantinabella/carbonara.png",
       ingredients: ["spaghetti", "egg yolk", "pancetta", "Parmesan cheese", "black pepper"],
       quantity: { weight: "300g" }
     },
@@ -43,7 +43,7 @@ const restaurantMenus = {
       name: "Margherita Pizza",
       description: "Classic wood-fired pizza topped with fresh mozzarella, ripe tomatoes, and basil.",
       price: 14.99,
-      image: "https://example.com/images/cantina-margherita.png",
+      image: "@/assets/images/menu/cantinabella/margherita.png",
       ingredients: ["pizza dough", "mozzarella", "tomato", "basil", "olive oil"],
       quantity: { diameter: "12 inch" }
     },
@@ -52,7 +52,7 @@ const restaurantMenus = {
       name: "Lasagna al Forno",
       description: "Layered pasta with rich meat sauce, creamy béchamel, and a golden crust of melted cheese.",
       price: 15.99,
-      image: "https://example.com/images/cantina-lasagna.png",
+      image: "@/assets/images/menu/cantinabella/lasagna.png",
       ingredients: ["lasagna sheets", "meat sauce", "béchamel sauce", "Parmesan cheese"],
       quantity: { weight: "400g" }
     }
@@ -63,7 +63,7 @@ const restaurantMenus = {
       name: "Sushi Platter",
       description: "A variety of fresh nigiri, sashimi, and maki rolls to delight every sushi lover.",
       price: 24.99,
-      image: "https://example.com/images/sushi-platter.png",
+      image: "@/assets/images/menu/sushihouse/platter.png",
       ingredients: ["nigiri", "sashimi", "maki rolls", "wasabi", "pickled ginger"],
       quantity: { units: 12 }
     },
@@ -72,7 +72,7 @@ const restaurantMenus = {
       name: "Spicy Tuna Roll",
       description: "Fresh tuna with a kick of spicy mayo and sesame seeds, rolled in seasoned rice.",
       price: 8.99,
-      image: "https://example.com/images/sushi-spicy-tuna.png",
+      image: "@/assets/images/menu/sushihouse/tuna.png",
       ingredients: ["tuna", "spicy mayo", "sesame seeds", "nori", "sushi rice"],
       quantity: { units: 8 }
     },
@@ -81,7 +81,7 @@ const restaurantMenus = {
       name: "Dragon Roll",
       description: "Eel, avocado, and cucumber, drizzled with sweet eel sauce and garnished with tobiko.",
       price: 12.99,
-      image: "https://example.com/images/sushi-dragon-roll.png",
+      image: "@/assets/images/menu/sushihouse/roll.png",
       ingredients: ["eel", "avocado", "cucumber", "eel sauce", "tobiko"],
       quantity: { units: 8 }
     }
@@ -92,7 +92,7 @@ const restaurantMenus = {
       name: "Chocolate Lava Cake",
       description: "Rich molten chocolate cake with a warm, gooey center, served with vanilla ice cream.",
       price: 6.99,
-      image: "https://example.com/images/doces-lava-cake.png",
+      image: "@/assets/images/menu/docesecia/lavacake.png",
       ingredients: ["dark chocolate", "butter", "sugar", "flour", "eggs", "vanilla ice cream"],
       quantity: { weight: "150g" }
     },
@@ -101,7 +101,7 @@ const restaurantMenus = {
       name: "Red Velvet Cupcake",
       description: "Moist red velvet cupcake topped with a tangy cream cheese frosting.",
       price: 3.99,
-      image: "https://example.com/images/doces-red-velvet.png",
+      image: "@/assets/images/menu/docesecia/redvelvet.png",
       ingredients: ["red velvet batter", "cream cheese frosting", "sugar", "eggs"],
       quantity: { units: 1 }
     },
@@ -110,7 +110,7 @@ const restaurantMenus = {
       name: "Tiramisu",
       description: "Traditional Italian dessert with layers of coffee-soaked ladyfingers and creamy mascarpone.",
       price: 7.99,
-      image: "https://example.com/images/doces-tiramisu.png",
+      image: "@/assets/images/menu/docesecia/tiramisu.png",
       ingredients: ["ladyfingers", "mascarpone cheese", "espresso", "cocoa powder"],
       quantity: { weight: "200g" }
     }
@@ -121,7 +121,7 @@ const restaurantMenus = {
       name: "Pepperoni Pizza",
       description: "Classic pepperoni pizza with mozzarella and our signature tomato sauce, baked to perfection.",
       price: 12.99,
-      image: "https://example.com/images/pizza-pepperoni.png",
+      image: "@/assets/images/menu/pizzamania/pepperoni.png",
       ingredients: ["pizza dough", "pepperoni", "mozzarella cheese", "tomato sauce"],
       quantity: { diameter: "12 inch" }
     },
@@ -130,7 +130,7 @@ const restaurantMenus = {
       name: "Four Cheese Pizza",
       description: "A creamy blend of mozzarella, provolone, Parmesan, and gorgonzola, creating a cheesy masterpiece.",
       price: 13.99,
-      image: "https://example.com/images/pizza-four-cheese.png",
+      image: "@/assets/images/menu/pizzamania/cheese.png",
       ingredients: ["pizza dough", "mozzarella cheese", "provolone cheese", "Parmesan cheese", "gorgonzola"],
       quantity: { diameter: "12 inch" }
     },
@@ -139,7 +139,7 @@ const restaurantMenus = {
       name: "Vegetarian Pizza",
       description: "Loaded with fresh bell peppers, onions, mushrooms, olives, and tomatoes on a whole-grain crust.",
       price: 11.99,
-      image: "https://example.com/images/pizza-vegetarian.png",
+      image: "@/assets/images/menu/pizzamania/vegetarian.png",
       ingredients: ["whole-grain crust", "bell peppers", "onions", "mushrooms", "olives", "tomatoes"],
       quantity: { diameter: "12 inch" }
     }
