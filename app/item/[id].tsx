@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, Button, TouchableOpacity } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import restaurantMenus from "@/constants/menus";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const imageMap: Record<string, any> = {
   "@/assets/images/menu/burguermania/classic.png": require('@/assets/images/menu/burguermania/classic.png'),
@@ -31,6 +32,30 @@ const ItemDetails = () => {
   const item = menuItems.find((menuItem) => menuItem.id === id);
 
 
+  const handleAddToCart = async () => {
+    try {
+
+      const cartJSON = await AsyncStorage.getItem("cart");
+      let cart = cartJSON ? JSON.parse(cartJSON) : [];
+
+
+      const index = cart.findIndex((cartItem: any) => cartItem.id === item?.id);
+      if (index !== -1) {
+
+        cart[index].quantity += 1;
+      } else {
+
+        cart.push({ ...item, quantity: 1 });
+      }
+
+      await AsyncStorage.setItem("cart", JSON.stringify(cart));
+      console.log("Item adicionado ao carrinho:", cart);
+    } catch (error) {
+      console.error("Erro ao adicionar item ao carrinho:", error);
+    }
+  };
+
+
   if (!item) {
     return (
       <View className="flex-1 items-center justify-center">
@@ -56,10 +81,19 @@ const ItemDetails = () => {
       </Text>
 
 
-      <Text className="text-xl font-bold mb-2">Ingredientes:</Text>
+      <Text className="text-xl font-bold mb-1">Ingredientes:</Text>
       {item.ingredients.map((ingredient, index) => (
-        <Text key={index} className="text-gray-600">{ingredient}</Text>
+        <Text key={index} className="text-gray-600">- {ingredient}</Text>
       ))}
+
+
+      <TouchableOpacity 
+        className="bg-red-600 flex justify-center items-center h-10 "
+        onPress={handleAddToCart}
+      >
+        <Text className="text-white font-bold text-lg">Adicionar ao carrinho</Text>
+      </TouchableOpacity>
+      
     </ScrollView>
   );
 };

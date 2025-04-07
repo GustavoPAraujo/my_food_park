@@ -71,7 +71,7 @@ const StorePage = () => {
           </ScrollView>
         </View>
 
-        <View className="px-5 pt-8 flex flex-row space-x-8 justify-around">
+        <View className="px-5 pt-8 flex flex-row gap-2 space-x-8 justify-around">
           <TouchableOpacity
             className="flex-1 bg-blue-500 py-3 rounded-lg items-center"
             onPress={() => openLink(store.deliveryLink)}
