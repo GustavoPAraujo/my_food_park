@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { Video } from 'expo-av';
+import { Video, ResizeMode  } from 'expo-av';
 
 interface Event {
   id: string;
@@ -55,6 +55,8 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
               source={{ uri: event.videoUrl }}
               style={{ flex: 1 }}
               useNativeControls
+              shouldPlay={true}
+              resizeMode={ResizeMode.CONTAIN}
             />
           </View>
         </>
