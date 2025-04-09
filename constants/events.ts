@@ -6,7 +6,7 @@ const Events =
       "title": "Noite de Jazz & Blues",
       "description": "Inicie a semana com uma atmosfera relaxante, combinando o melhor do jazz e blues ao vivo.",
       "image": "@/assets/images/events/event1.png",
-      "videoUrl": "https://videos.pexels.com/video-files/5657389/5657389-uhd_1440_2732_25fps.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/4786256/4786256-uhd_2732_1440_25fps.mp4"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@ const Events =
       "title": "Stand-Up Comedy no Embarca",
       "description": "Ria com os melhores comediantes locais em um show de stand-up descontraído.",
       "image": "@/assets/images/events/event2.png",
-      "videoUrl": "https://videos.pexels.com/video-files/5124228/5124228-hd_1080_1920_25fps.mp44"
+      "videoUrl": "https://videos.pexels.com/video-files/8873202/8873202-hd_1920_1080_25fps.mp4"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@ const Events =
       "title": "Noite de Rock & Pop",
       "description": "Vibre com uma mistura de rock e pop ao vivo, com bandas emergentes do cenário musical.",
       "image": "@/assets/images/events/event3.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/3326187/3326187-hd_1920_1080_24fps.mp4"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@ const Events =
       "title": "Stand-Up e Improviso",
       "description": "Divirta-se com uma noite de humor, com apresentações de stand-up e sessões de improviso.",
       "image": "@/assets/images/events/event4.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/4122166/4122166-hd_1920_1080_30fps.mp4"
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@ const Events =
       "title": "Festival de Bandas Locais",
       "description": "Encerrando a semana com muita música: bandas locais se apresentam em um festival vibrante.",
       "image": "@/assets/images/events/event5.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/17333920/17333920-uhd_2560_1440_30fps.mp4"
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@ const Events =
       "title": "Mix de Música Eletrônica",
       "description": "Um sábado animado com DJs locais, proporcionando uma experiência única.",
       "image": "@/assets/images/events/event6.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/3517443/3517443-hd_1920_1080_25fps.mp4"
     },
     {
       "id": "7",
@@ -54,7 +54,7 @@ const Events =
       "title": "Brunch com Música ao Vivo",
       "description": "Desfrute de um domingo relaxante com um brunch especial acompanhado de música ao vivo e pitadas de humor.",
       "image": "@/assets/images/events/event7.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/4877877/4877877-uhd_2732_1440_25fps.mp4"
     }
   
 ]
