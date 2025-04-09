@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 
 const imageMap: Record<string, any> = {
   "@/assets/images/menu/burguermania/classic.png": require('@/assets/images/menu/burguermania/classic.png'),
@@ -26,7 +27,6 @@ const imageMap: Record<string, any> = {
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
-
 
   const loadCart = async () => {
     try {
@@ -61,69 +61,62 @@ const CartPage = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
-  useEffect(() => {
-    loadCart();
-  }, []);
+  // Executa loadCart() sempre que a tela ganha foco
+  useFocusEffect(
+    useCallback(() => {
+      loadCart();
+    }, [])
+  );
 
   return (
-    <>
-      <View className="items-center">
-        <Text className="text-2xl font-bold mt-4 mb-4">Carrinho de Compras</Text>
-        <Text className="text-xl font-bold mb-4">
-          Total: R$ {calculateTotal().toFixed(2)}
-        </Text>
-      </View>
-
-      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 100 }}>
-        {cartItems.length === 0 ? (
-          <Text className="text-gray-500">Carrinho vazio.</Text>
-        ) : (
-          cartItems.map((item) => (
-            <View key={item.id} className="mb-4 p-4 bg-white rounded flex flex-row ">
-              <View>
-                <Image
-                  source={imageMap[item.image]}
-                  className="w-40 h-40 rounded-lg mr-4"
-                  resizeMode="cover"
-                />
-
-              </View>
-
-              <View className="w-40 flex justify-between">
-                <View>
-                  <Text className="text-lg font-bold break-words whitespace-normal">{item.name}</Text>
-                  <Text className="text-gray-600">Preço: R$ {item.price.toFixed(2)}</Text>
-                  <Text className="text-gray-600">Quantidade: {item.quantity}</Text>
-                </View>
-
-                <View className="flex flex-row gap-2 mt-2">
-                  <TouchableOpacity
-                    onPress={() => updateQuantity(item.id, item.quantity - 1)}
-                    className="bg-gray-300 p-2 rounded"
-                  >
-                    <Text>-</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="bg-gray-300 p-2 rounded"
-                  >
-                    <Text>+</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => removeItem(item.id)}
-                    className="bg-red-500 p-2 rounded"
-                  >
-                    <Text className="text-white">Remover</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-
+    <ScrollView contentContainerStyle={{ alignItems: "center", paddingBottom: 100 }}>
+      <Text className="text-2xl font-bold mt-4 mb-4">Carrinho de Compras</Text>
+      <Text className="text-xl font-bold mb-4">
+        Total: R$ {calculateTotal().toFixed(2)}
+      </Text>
+      {cartItems.length === 0 ? (
+        <Text className="text-gray-500">Carrinho vazio.</Text>
+      ) : (
+        cartItems.map((item) => (
+          <View key={item.id} className="mb-4 p-4 border rounded flex flex-row">
+            <View>
+              <Image
+                source={imageMap[item.image]}
+                className="w-40 h-40 rounded-lg mr-4"
+                resizeMode="cover"
+              />
             </View>
-          ))
-        )}
-
-      </ScrollView>
-    </>
+            <View className="w-40 flex justify-between">
+              <View>
+                <Text className="text-lg font-bold break-words whitespace-normal">{item.name}</Text>
+                <Text className="text-gray-600">Preço: R$ {item.price.toFixed(2)}</Text>
+                <Text className="text-gray-600">Quantidade: {item.quantity}</Text>
+              </View>
+              <View className="flex flex-row gap-2 mt-2">
+                <TouchableOpacity
+                  onPress={() => updateQuantity(item.id, item.quantity - 1)}
+                  className="bg-gray-300 p-2 rounded"
+                >
+                  <Text>-</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => updateQuantity(item.id, item.quantity + 1)}
+                  className="bg-gray-300 p-2 rounded"
+                >
+                  <Text>+</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => removeItem(item.id)}
+                  className="bg-red-500 p-2 rounded"
+                >
+                  <Text className="text-white">Remover</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        ))
+      )}
+    </ScrollView>
   );
 };
 
