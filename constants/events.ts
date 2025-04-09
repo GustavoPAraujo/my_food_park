@@ -6,8 +6,7 @@ const Events =
       "title": "Noite de Jazz & Blues",
       "description": "Inicie a semana com uma atmosfera relaxante, combinando o melhor do jazz e blues ao vivo.",
       "image": "@/assets/images/events/event1.png",
-      "videoUrl": "https://www.pexels.com/video/live-band-performing-9419428/"
-      //https://www.youtube.com/watch?v=jft3BVoxqjo
+      "videoUrl": "https://videos.pexels.com/video-files/5657389/5657389-uhd_1440_2732_25fps.mp4"
     },
     {
       "id": "2",
@@ -15,7 +14,7 @@ const Events =
       "title": "Stand-Up Comedy no Embarca",
       "description": "Ria com os melhores comediantes locais em um show de stand-up descontraído.",
       "image": "@/assets/images/events/event2.png",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "videoUrl": "https://videos.pexels.com/video-files/5124228/5124228-hd_1080_1920_25fps.mp44"
     },
     {
       "id": "3",

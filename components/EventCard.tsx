@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { WebView } from 'react-native-webview';
-
+import { Video } from 'expo-av';
 
 interface Event {
   id: string;
@@ -32,8 +31,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
 
   return (
     <>
-      <TouchableOpacity onPress={() => { setShowVideo(true) }}>
-
+      <TouchableOpacity onPress={() => setShowVideo(true)}>
         <View className="p-4 bg-white rounded-t-xl shadow-lg">
           <Text className="text-3xl font-bold text-red-600">{event.day}</Text>
           <Text className="text-xl font-semibold mt-2">{event.title}</Text>
@@ -53,16 +51,14 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
           </TouchableOpacity>
 
           <View className="w-full h-60 mb-4">
-            <WebView
+            <Video
               source={{ uri: event.videoUrl }}
               style={{ flex: 1 }}
-          
+              useNativeControls
             />
           </View>
-
         </>
       )}
-
     </>
   );
 };
