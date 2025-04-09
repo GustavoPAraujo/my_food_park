@@ -61,7 +61,6 @@ const CartPage = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
-  // Executa loadCart() sempre que a tela ganha foco
   useFocusEffect(
     useCallback(() => {
       loadCart();
